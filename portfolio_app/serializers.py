@@ -1,8 +1,19 @@
 from rest_framework import serializers
-from .models import (Member)
+from .models import (ContactData, About, Service)
 
 
-class MemberSerializer(serializers.ModelSerializer):
+
+class ContactDataSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Member
+        model = ContactData
+        fields = '__all__'
+        
+class AboutSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = About
+        fields = '__all__'
+        
+class ServiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Service
         fields = '__all__'
