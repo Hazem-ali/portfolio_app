@@ -16,8 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title='Portfolio APIs',
+        default_version='1.0.0',
+        description='API documentation of Portfolio app',
+    ),
+    public=True
+)
+# Add this to urlpatterns
+# path('swagger/', schema_view.with_ui('swagger',
+#      cache_timeout=0), name='swagger-schema'),
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('accounts.urls')),
     path('portfolio/', include('portfolio_app.urls')),
+    path('swagger/', schema_view.with_ui('swagger',
+         cache_timeout=0), name='swagger-schema'),
 ]

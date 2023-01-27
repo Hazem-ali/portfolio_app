@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'portfolio_app',
     'accounts',
     'rest_framework.authtoken',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
