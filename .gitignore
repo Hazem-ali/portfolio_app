@@ -1,1 +1,3 @@
 images
+env/
+heroku_reqs.txt
